@@ -10,9 +10,8 @@ intents = disnake.Intents.all()
 
 class Bot(commands.Bot):
     def __init__(self):
-        intents = disnake.Intents.all()
         super().__init__(
-            intents=intents,
+            intents=disnake.Intents.all(),
             command_prefix='.к',
             reload=True,
             command_sync_flags=commands.CommandSyncFlags.all(),
