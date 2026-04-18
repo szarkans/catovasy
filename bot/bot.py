@@ -21,20 +21,19 @@ class Bot(commands.Bot):
         )
         self.pool: asyncpg.Pool = None
 
-    async def setup_hook(self):
-        self.pool = await asyncpg.create_pool(
-            dsn=os.getenv("DATABASE_URL"),
-            min_size=2,
-            max_size=10,
-        )
-
     async def close(self):
         if self.pool:
             await self.pool.close()
         await super().close()
 
-    @commands.event
     async def on_ready(self):
         print("Я родился!")
+        self.pool = await asyncpg.create_pool(
+            dsn=os.getenv("DATABASE_URL"),
+            min_size=2,
+            max_size=10,
+            statement_cache_size=0,
+        )
+        print("БД подключена")
 
 bot = Bot()

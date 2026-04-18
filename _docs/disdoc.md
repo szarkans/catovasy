@@ -130,12 +130,12 @@ name                  | text                     | YES         | - имя кот
 gender                | text                     | YES         | - пол котика (null пока статус pending)
 color                 | text                     | YES         | - цвет котика. # TODO
 balance               | integer                  | NO          | - баланс монет котика. DEFAULT 0
-base_attack           | smallint                 | NO          | - базовая атака, растёт через прокачку. DEFAULT 1
-attack_mod            | smallint                 | NO          | - модификатор атаки (бафы/дебафы). DEFAULT 0. эффективная атака = base + mod
-base_defense          | smallint                 | NO          | - базовая защита. DEFAULT 1
-defense_mod           | smallint                 | NO          | - модификатор защиты. DEFAULT 0
-base_endurance        | smallint                 | NO          | - базовая выносливость. DEFAULT 1
-endurance_mod         | smallint                 | NO          | - модификатор выносливости. DEFAULT 0
+base_attack           | float4                   | NO          | - базовая атака, растёт через прокачку. DEFAULT 1
+attack_mod            | float4                   | NO          | - модификатор атаки (бафы/дебафы). DEFAULT 0. эффективная атака = base + mod
+base_defense          | float4                   | NO          | - базовая защита. DEFAULT 1
+defense_mod           | float4                   | NO          | - модификатор защиты. DEFAULT 0
+base_endurance        | float4                   | NO          | - базовая выносливость. DEFAULT 1
+endurance_mod         | float4                   | NO          | - модификатор выносливости. DEFAULT 0
 base_hp               | smallint                 | NO          | - максимальное здоровье (прокачиваемое). DEFAULT 5
 hp_mod                | smallint                 | NO          | - модификатор макс. хп. DEFAULT 0
 current_hp            | smallint                 | NO          | - текущее хп котика. DEFAULT 5

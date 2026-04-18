@@ -30,6 +30,7 @@ def setup_logger():
 
 def load_extension():
     extensions = [
+        "cogs.commands"
     ]
     for i in extensions:
         bot.load_extension(f"bot.{i}")
